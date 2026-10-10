@@ -1,0 +1,2855 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090810">
+<meta name="description" content="RAUF PREMIUM HUB — discover PC games, Android games, apps, movies and web series.">
+<title>RAUF PREMIUM HUB | Digital Entertainment</title>
+
+<style>
+
+:root {
+  --bg: #0b0d0e;
+  --panel: #141719;
+  --panel2: #1c2021;
+  --purple: #b7ff32;
+  --purple2: #d0ff80;
+  --text: #f5f7f2;
+  --muted: #a3aaa0;
+  --border: #303a2b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(9,8,16,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  max-width:1400px;margin:auto;padding:17px 5%;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px;white-space:nowrap}
+.logo span,.accent{color:var(--purple2)}
+.navlinks{display:flex;gap:23px;align-items:center}
+.navlinks a{color:#d5cde5;font-size:14px}
+.navlinks a:hover{color:var(--purple2)}
+.menu-btn{
+  display:none;background:var(--panel2);color:white;
+  border:1px solid var(--border);padding:9px 12px;border-radius:8px;
+}
+.hero{
+  min-height:370px;padding:75px 5% 45px;text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 0%,#452078 0%,transparent 58%),
+    linear-gradient(180deg,#100b1d,var(--bg));
+}
+.eyebrow{
+  display:inline-block;color:var(--purple2);font-size:12px;
+  font-weight:bold;letter-spacing:3px;margin-bottom:17px;
+}
+.hero h1{
+  font-size:clamp(35px,6vw,68px);line-height:1.08;
+  max-width:900px;margin:0 auto 18px;letter-spacing:-2px;
+}
+.hero h1 span{
+  color:var(--purple2);
+  text-shadow:0 0 35px #8b45ff55;
+}
+.hero p{color:var(--muted);line-height:1.7;margin:0 auto 26px}
+.search-wrap{max-width:650px;margin:auto;position:relative}
+.search-wrap input{
+  width:100%;padding:17px 20px 17px 48px;
+  background:#171324;border:1px solid #4a3269;
+  border-radius:12px;color:white;outline:none;
+}
+.search-wrap input:focus{border-color:var(--purple);box-shadow:0 0 20px #9255ff22}
+.search-icon{position:absolute;left:17px;top:15px;font-size:19px}
+.hero-note{font-size:12px!important;margin-top:12px!important}
+.quick-links{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:10px;
+  padding:24px 5% 5px;
+}
+.quick-links a{
+  background:var(--panel);border:1px solid var(--border);
+  padding:11px 16px;border-radius:30px;font-size:13px;
+  transition:.2s;
+}
+.quick-links a:hover{border-color:var(--purple);background:#211638}
+main{max-width:1400px;margin:auto;padding:25px 5% 65px}
+.section{padding-top:32px;margin-bottom:35px}
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:19px;
+}
+.section-head h2{font-size:clamp(19px,3vw,25px);margin:0}
+.section-head h2 span{margin-right:7px}
+.section-sub{color:var(--muted);font-size:12px;margin-top:7px}
+.view-all{
+  border:1px solid #6740a0;color:#d8c1ff;background:#1b1230;
+  padding:10px 14px;border-radius:8px;white-space:nowrap;
+  font-weight:bold;font-size:12px;
+}
+.view-all:hover{background:var(--purple);color:white}
+.grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;
+}
+.card{
+  min-width:0;background:var(--panel);
+  border:1px solid var(--border);border-radius:13px;
+  overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s;
+}
+.card:hover{
+  transform:translateY(-5px);border-color:#8250d0;
+  box-shadow:0 10px 30px #7b39ff17;
+}
+.poster{
+  width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#29183e,#15102a 65%,#38205a);
+}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+.poster .poster-emoji{
+  position:absolute;font-size:54px;
+  filter:drop-shadow(0 0 20px #a36cff55);
+}
+.poster:has(img[src]) .poster-emoji{display:none}
+.poster img:not([src]),.poster img[src=""]{display:none}
+.poster img.broken{display:none}
+.card-body{padding:14px}
+.tag{
+  display:inline-block;color:#d1b5ff;background:#291b40;
+  padding:5px 8px;border-radius:5px;font-size:10px;
+  font-weight:bold;letter-spacing:.5px;
+}
+.card h3{font-size:15px;margin:11px 0 7px;line-height:1.4}
+.card p{
+  color:var(--muted);font-size:12px;line-height:1.55;
+  margin:0;min-height:38px;
+}
+.card-actions{margin-top:14px}
+.card-link{
+  display:block;text-align:center;padding:10px 8px;
+  background:linear-gradient(100deg,#7139d4,#9c5bff);
+  border-radius:7px;font-size:12px;font-weight:bold;color:white;
+}
+.card-link:hover{filter:brightness(1.15)}
+.no-results{
+  display:none;text-align:center;padding:50px 15px;
+  color:var(--muted);background:var(--panel);border-radius:12px;
+}
+#catalogView{display:none;min-height:55vh}
+.catalog-heading{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:15px;margin:25px 0;
+}
+.catalog-heading h2{margin:0;font-size:28px}
+.back-btn{
+  color:white;background:#211632;border:1px solid var(--border);
+  border-radius:8px;padding:11px 15px;
+}
+footer{border-top:1px solid var(--border);background:#0c0a13}
+.footer-inner{
+  max-width:1400px;margin:auto;padding:35px 5%;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:25px;
+}
+.footer-inner p{color:var(--muted);font-size:12px;line-height:1.7}
+.footer-links{display:flex;gap:17px;flex-wrap:wrap;font-size:12px;color:#c5b5df}
+.copyright{
+  text-align:center;border-top:1px solid #21192e;
+  padding:17px;color:#827a93;font-size:11px;
+}
+@media(max-width:950px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+  .navlinks{gap:12px}
+}
+@media(max-width:650px){
+  .nav{padding:14px 4%}
+  .logo{font-size:17px}
+  .menu-btn{display:block}
+  .navlinks{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    background:#100d19;padding:20px 5%;border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:flex-start;
+  }
+  .navlinks.open{display:flex}
+  .hero{padding:55px 5% 35px;min-height:330px}
+  .hero h1{letter-spacing:-1px}
+  main{padding-left:4%;padding-right:4%}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .card-body{padding:11px}
+  .card h3{font-size:13px}
+  .card p{font-size:11px}
+  .section-head h2{font-size:18px}
+  .view-all{padding:9px;font-size:11px}
+  .quick-links{gap:7px}
+  .quick-links a{padding:9px 11px;font-size:11px}
+}
+
+.details-btn {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  margin: 12px 0 0;
+  padding: 14px 12px;
+  border: 1px solid #bd8cff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #28123f, #7134bd);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 0 12px rgba(146, 85, 255, 0.25);
+}
+
+.details-btn:hover {
+  background: linear-gradient(135deg, #7134bd, #9255ff);
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(146, 85, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+
+/* ===== RAUF PREMIUM HUB CARD UPGRADE ===== */
+
+.card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: linear-gradient(145deg, #171222, #0d0b14) !important;
+  border: 1px solid #382450 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #a855f7 !important;
+  box-shadow: 0 0 8px #8b3dff66,
+              0 0 24px #8b3dff30;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  object-position: center;
+  background: #171222;
+  transition: transform 0.35s ease;
+}
+
+.card:hover img {
+  transform: scale(1.035);
+}
+
+.card h3 {
+  color: #f8f5ff;
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 12px 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  color: #bcb2d0;
+  line-height: 1.6;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 10px;
+}
+
+.card-actions .card-link,
+.card-actions .details-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.card-actions .card-link {
+  color: white;
+  background: linear-gradient(100deg, #7025c9, #a855f7);
+  border: 1px solid #a855f7;
+}
+
+.card-actions .card-link:hover {
+  box-shadow: 0 0 17px #8b3dff88;
+  filter: brightness(1.12);
+}
+
+.card-actions .details-btn {
+  color: #e4ccff;
+  background: #1a1127;
+  border: 1px solid #7046a8;
+}
+
+.card-actions .details-btn:hover {
+  color: white;
+  background: #35204d;
+  border-color: #bd8cff;
+  box-shadow: 0 0 14px #8b3dff55;
+}
+
+@media (max-width: 600px) {
+  .card {
+    border-radius: 12px !important;
+  }
+
+  .card img {
+    height: 145px;
+  }
+
+  .card h3 {
+    font-size: 15px;
+  }
+
+  .card-actions .card-link,
+  .card-actions .details-btn {
+    font-size: 12px;
+    min-height: 42px;
+  }
+}
+
+/* RAUF PREMIUM HUB - LIME NEON THEME */
+
+.card {
+  background: linear-gradient(145deg, #181c1d, #0e1011) !important;
+  border: 1px solid #303a2b !important;
+  box-shadow: 0 5px 18px #00000055;
+}
+
+.card:hover {
+  border-color: #b7ff32 !important;
+  box-shadow: 0 0 10px #b7ff3240, 0 0 22px #b7ff3220;
+}
+
+.card-actions .card-link {
+  background: linear-gradient(100deg, #83bd16, #b7ff32) !important;
+  border: 1px solid #d0ff80 !important;
+  color: #10140a !important;
+}
+
+.card-actions .card-link:hover {
+  box-shadow: 0 0 18px #b7ff3270;
+}
+
+.card-actions .details-btn {
+  background: #1b2116 !important;
+  border-color: #658e18 !important;
+  color: #d0ff80 !important;
+}
+
+.card-actions .details-btn:hover {
+  background: #29381b !important;
+  border-color: #b7ff32 !important;
+  box-shadow: 0 0 15px #b7ff3240;
+}
+
+.accent,
+.logo span {
+  color: #b7ff32 !important;
+}
+
+::selection {
+  background: #b7ff32;
+  color: #10140a;
+}
+/* ULTRA PREMIUM HERO - RAUF PREMIUM HUB */
+
+.hero {
+position: relative;
+overflow: hidden;
+isolation: isolate;
+padding: 95px 24px 85px !important;
+margin: 22px auto !important;
+max-width: 1450px;
+text-align: center;
+border: 1px solid #39452c;
+border-radius: 28px;
+background:
+radial-gradient(ellipse at 50% 0%, #b7ff321c, transparent 48%),
+radial-gradient(ellipse at 0% 100%, #b7ff320b, transparent 42%),
+linear-gradient(135deg, #171b18 0%, #0b0e0c 55%, #151a12 100%) !important;
+box-shadow: 0 18px 60px #0008, inset 0 1px 0 #ffffff0c;
+}
+
+.hero::before {
+content: "";
+position: absolute;
+inset: 0;
+z-index: -1;
+pointer-events: none;
+background-image:
+linear-gradient(#b7ff3208 1px, transparent 1px),
+linear-gradient(90deg, #b7ff3208 1px, transparent 1px);
+background-size: 38px 38px;
+mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.hero .eyebrow {
+display: inline-block;
+padding: 10px 17px;
+margin-bottom: 20px;
+border: 1px solid #789c3c80;
+border-radius: 50px;
+background: #b7ff320d;
+color: #d0ff80 !important;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 3px;
+box-shadow: 0 0 24px #b7ff3210;
+}
+
+.hero h1 {
+max-width: 950px;
+margin: 0 auto 20px !important;
+color: #f6f8f2 !important;
+font-size: clamp(36px, 6vw, 76px) !important;
+line-height: 1.08;
+font-weight: 900;
+letter-spacing: -2px;
+text-shadow: 0 5px 30px #0008;
+}
+
+.hero h1 span {
+color: #b7ff32 !important;
+text-shadow: 0 0 28px #b7ff3235;
+}
+
+.hero p {
+max-width: 680px;
+margin: 0 auto 30px !important;
+color: #b4bcb0 !important;
+font-size: 16px;
+line-height: 1.9;
+}
+
+.hero a,
+.hero button {
+transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.hero a:hover,
+.hero button:hover {
+transform: translateY(-3px);
+box-shadow: 0 0 22px #b7ff3230;
+}
+
+@media (max-width: 600px) {
+.hero {
+padding: 65px 18px 55px !important;
+margin: 14px 10px !important;
+border-radius: 20px;
+}
+
+.hero .eyebrow {
+font-size: 9px;
+letter-spacing: 1.5px;
+}
+
+.hero h1 {
+font-size: 39px !important;
+letter-spacing: -1px;
+}
+
+.hero p {
+font-size: 14px;
+}
+}
+
+/* ULTRA PREMIUM NAVIGATION */
+
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: #0b0e0deF !important;
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border-bottom: 1px solid #b7ff3230 !important;
+box-shadow: 0 8px 30px #0005;
+}
+
+.nav {
+min-height: 76px;
+gap: 20px;
+}
+
+.logo {
+font-size: 22px !important;
+font-weight: 900 !important;
+letter-spacing: 1px;
+white-space: nowrap;
+transition: text-shadow .25s ease;
+}
+
+.logo:hover {
+text-shadow: 0 0 18px #b7ff3260;
+}
+
+.logo span {
+color: #b7ff32 !important;
+}
+
+.navlinks {
+gap: 7px !important;
+}
+
+.navlinks a {
+position: relative;
+padding: 11px 13px !important;
+border: 1px solid transparent;
+border-radius: 10px;
+color: #d2d8ce !important;
+font-size: 13px;
+font-weight: 700;
+transition: all .25s ease;
+}
+
+.navlinks a:hover {
+color: #d0ff80 !important;
+background: #b7ff3210;
+border-color: #b7ff3235;
+box-shadow: 0 0 16px #b7ff3210;
+transform: translateY(-1px);
+}
+
+.menu-btn {
+border: 1px solid #b7ff3255 !important;
+border-radius: 10px !important;
+background: #b7ff3210 !important;
+color: #b7ff32 !important;
+transition: all .25s ease;
+}
+
+.menu-btn:hover {
+background: #b7ff3225 !important;
+box-shadow: 0 0 18px #b7ff3230;
+}
+
+@media (max-width: 800px) {
+.nav {
+min-height: 66px;
+}
+
+.logo {
+font-size: 17px !important;
+}
+
+.navlinks a {
+border-radius: 8px;
+}
+}
+/* ULTRA PREMIUM SEARCH BAR */
+
+input[type="search"],
+.search-box input,
+#searchInput {
+background: #111512 !important;
+color: #f5f7f2 !important;
+border: 1px solid #39452c !important;
+border-radius: 15px !important;
+padding: 16px 20px !important;
+outline: none !important;
+transition: border-color .25s ease, box-shadow .25s ease,
+background .25s ease;
+}
+
+input[type="search"]:focus,
+.search-box input:focus,
+#searchInput:focus {
+border-color: #b7ff32 !important;
+background: #151a12 !important;
+box-shadow: 0 0 0 4px #b7ff3212,
+0 0 24px #b7ff3220 !important;
+}
+
+input[type="search"]::placeholder,
+.search-box input::placeholder,
+#searchInput::placeholder {
+color: #8d9886 !important;
+}
+
+.search-box {
+border-color: #303a2b;
+transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.search-box:focus-within {
+border-color: #b7ff3270;
+box-shadow: 0 0 22px #b7ff3212;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+cursor: pointer;
+}
+/* RAUF PREMIUM HUB - ELITE GAME CARDS */
+
+.card {
+position: relative;
+overflow: hidden;
+isolation: isolate;
+background: linear-gradient(145deg, #191e19, #0d100e) !important;
+border: 1px solid #303a2b !important;
+border-radius: 18px !important;
+box-shadow: 0 8px 25px #0005;
+transition: transform .3s ease, border-color .3s ease,
+box-shadow .3s ease;
+}
+
+.card::before {
+content: "";
+position: absolute;
+top: 0;
+left: -120%;
+width: 70%;
+height: 100%;
+z-index: 2;
+pointer-events: none;
+background: linear-gradient(100deg, transparent,
+#ffffff0b, transparent);
+transform: skewX(-18deg);
+transition: left .65s ease;
+}
+
+.card:hover::before {
+left: 150%;
+}
+
+.card:hover {
+transform: translateY(-7px);
+border-color: #b7ff32 !important;
+box-shadow: 0 15px 35px #0008,
+0 0 18px #b7ff3218 !important;
+}
+
+.card img {
+transition: transform .45s ease, filter .45s ease;
+}
+
+.card:hover img {
+transform: scale(1.045);
+filter: brightness(1.08);
+}
+
+.card h3 {
+color: #f4f7ef !important;
+font-weight: 800;
+letter-spacing: .2px;
+}
+
+.card p {
+color: #aab3a5 !important;
+}
+
+.card-actions .card-link {
+border-radius: 10px !important;
+font-weight: 800 !important;
+transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.card-actions .card-link:hover {
+transform: translateY(-2px);
+box-shadow: 0 0 20px #b7ff3240;
+}
+
+.card-actions .details-btn {
+border-radius: 10px !important;
+font-weight: 800 !important;
+transition: all .25s ease;
+}
+
+.card-actions .details-btn:hover {
+transform: translateY(-2px);
+box-shadow: 0 0 18px #b7ff3225;
+}
+
+@media (prefers-reduced-motion: reduce) {
+.card,
+.card::before,
+.card img,
+.card-actions .card-link,
+.card-actions .details-btn {
+transition: none !important;
+}
+}
+/* RAUF PREMIUM HUB - LUXURY DETAILS POPUP */
+
+.details-overlay {
+background: #050705d9 !important;
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+padding: 20px;
+animation: overlayFade .22s ease;
+}
+
+.details-modal {
+position: relative;
+overflow: hidden;
+background:
+radial-gradient(ellipse at top, #b7ff3212, transparent 55%),
+linear-gradient(145deg, #191e19, #0b0e0c) !important;
+border: 1px solid #789c3c80 !important;
+border-radius: 22px !important;
+box-shadow: 0 25px 80px #000b, 0 0 35px #b7ff3210;
+animation: modalEnter .3s ease;
+}
+
+.details-modal h2 {
+color: #b7ff32 !important;
+font-weight: 900 !important;
+letter-spacing: -.5px;
+}
+
+.details-modal p {
+color: #c0c8bb !important;
+line-height: 1.8;
+}
+
+.details-modal img {
+border-radius: 14px !important;
+border: 1px solid #39452c;
+}
+
+.details-modal a {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+background: linear-gradient(110deg, #83bd16, #b7ff32) !important;
+color: #10140a !important;
+border: 1px solid #d0ff80 !important;
+border-radius: 11px !important;
+padding: 13px 20px !important;
+font-weight: 900 !important;
+text-decoration: none !important;
+transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.details-modal a:hover {
+transform: translateY(-2px);
+box-shadow: 0 0 22px #b7ff3240;
+}
+
+.details-modal button {
+border-radius: 10px !important;
+transition: all .2s ease;
+}
+
+@keyframes overlayFade {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+
+@keyframes modalEnter {
+from { opacity: 0; transform: translateY(14px) scale(.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+.details-overlay,
+.details-modal {
+animation: none !important;
+}
+}
+/* RAUF PREMIUM HUB - PREMIUM FOOTER */
+
+footer {
+position: relative;
+overflow: hidden;
+margin-top: 65px !important;
+padding: 38px 22px 24px !important;
+text-align: center;
+background:
+radial-gradient(ellipse at top, #b7ff3210, transparent 65%),
+linear-gradient(180deg, #111511, #090b09) !important;
+border-top: 1px solid #b7ff3240 !important;
+box-shadow: 0 -12px 35px #0003;
+}
+
+footer::before {
+content: "";
+position: absolute;
+top: -1px;
+left: 35%;
+width: 30%;
+height: 2px;
+background: #b7ff32;
+box-shadow: 0 0 15px #b7ff32, 0 0 35px #b7ff3270;
+}
+
+footer h2,
+footer h3 {
+color: #f3f7ed !important;
+font-weight: 900;
+}
+
+footer p {
+color: #9da798 !important;
+line-height: 1.8;
+}
+
+footer a {
+color: #c9f78c !important;
+text-decoration: none;
+transition: color .2s ease, text-shadow .2s ease;
+}
+
+footer a:hover {
+color: #b7ff32 !important;
+text-shadow: 0 0 12px #b7ff3260;
+}
+
+footer .logo,
+footer .logo span {
+color: #b7ff32 !important;
+}
+
+@media (max-width: 600px) {
+footer {
+margin-top: 40px !important;
+padding: 30px 16px 20px !important;
+}
+}
+/* PREMIUM PAGE LOADING BAR */
+
+#pageProgress {
+position: fixed;
+top: 0;
+left: 0;
+width: 0%;
+height: 3px;
+z-index: 99999;
+background: #b7ff32;
+box-shadow: 0 0 10px #b7ff32, 0 0 22px #b7ff3270;
+transition: width .25s ease;
+pointer-events: none;
+}
+
+#pageProgress.finished {
+opacity: 0;
+transition: width .25s ease, opacity .4s ease .2s;
+}
+/* PREMIUM SCROLL TO TOP */
+
+#scrollTopBtn {
+position: fixed;
+right: 24px;
+bottom: 24px;
+z-index: 999;
+width: 48px;
+height: 48px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #b7ff32 !important;
+border-radius: 14px !important;
+background: #151b11 !important;
+color: #b7ff32 !important;
+font-size: 23px;
+font-weight: 900;
+cursor: pointer;
+opacity: 0;
+visibility: hidden;
+transform: translateY(12px);
+transition: opacity .25s ease, transform .25s ease,
+box-shadow .25s ease, visibility .25s ease;
+}
+
+#scrollTopBtn.visible {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+background: #b7ff32 !important;
+color: #10140a !important;
+box-shadow: 0 0 22px #b7ff3260;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+#scrollTopBtn {
+right: 14px;
+bottom: 14px;
+width: 44px;
+height: 44px;
+}
+}
+/* RAUF PREMIUM HUB - RESPONSIVE UPGRADE */
+
+* {
+  box-sizing: border-box;
+  }
+
+html,
+body {
+max-width: 100%;
+overflow-x: clip;
+}
+
+img {
+max-width: 100%;
+}
+
+@media (max-width: 768px) {
+.nav {
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.navlinks {
+max-width: 100%;
+}
+
+.hero {
+width: auto;
+margin: 14px 10px !important;
+}
+
+.card {
+min-width: 0;
+}
+
+.card-actions {
+gap: 9px;
+}
+
+.card-actions .card-link,
+.card-actions .details-btn {
+min-width: 0;
+font-size: 12px;
+}
+}
+
+@media (max-width: 480px) {
+.logo {
+font-size: 15px !important;
+letter-spacing: 0;
+}
+
+.hero h1 {
+font-size: clamp(30px, 9vw, 39px) !important;
+overflow-wrap: anywhere;
+}
+
+.hero .eyebrow {
+max-width: 100%;
+line-height: 1.7;
+}
+
+.card {
+border-radius: 14px !important;
+}
+
+.card img {
+height: 155px;
+object-fit: cover;
+}
+
+.card-actions {
+flex-direction: column;
+}
+
+.card-actions .card-link,
+.card-actions .details-btn {
+width: 100%;
+}
+
+#scrollTopBtn {
+width: 42px;
+height: 42px;
+}
+}
+/* PREMIUM CATEGORY SECTION HEADINGS */
+
+section[id="pc-games"],
+section[id="android-games"],
+section[id="pc-apps"],
+section[id="android-apps"],
+section[id="movies"],
+section[id="web-series"] {
+scroll-margin-top: 100px;
+}
+
+section[id="pc-games"] h2,
+section[id="android-games"] h2,
+section[id="pc-apps"] h2,
+section[id="android-apps"] h2,
+section[id="movies"] h2,
+section[id="web-series"] h2 {
+position: relative;
+width: fit-content;
+max-width: 100%;
+margin-bottom: 24px;
+color: #f4f7ef;
+font-weight: 900;
+letter-spacing: -.4px;
+}
+
+section[id="pc-games"] h2::after,
+section[id="android-games"] h2::after,
+section[id="pc-apps"] h2::after,
+section[id="android-apps"] h2::after,
+section[id="movies"] h2::after,
+section[id="web-series"] h2::after {
+content: "";
+display: block;
+width: 55%;
+height: 3px;
+margin-top: 10px;
+border-radius: 10px;
+background: linear-gradient(90deg, #b7ff32, transparent);
+box-shadow: 0 0 12px #b7ff3235;
+}
+
+section[id="pc-games"]:target,
+section[id="android-games"]:target,
+section[id="pc-apps"]:target,
+section[id="android-apps"]:target,
+section[id="movies"]:target,
+section[id="web-series"]:target {
+animation: categoryGlow .7s ease;
+}
+
+@keyframes categoryGlow {
+0% { filter: brightness(1.35); }
+100% { filter: brightness(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+section[id="pc-games"]:target,
+section[id="android-games"]:target,
+section[id="pc-apps"]:target,
+section[id="android-apps"]:target,
+section[id="movies"]:target,
+section[id="web-series"]:target {
+animation: none;
+}
+}
+/* RAUF PREMIUM HUB - PREMIUM BACKGROUND */
+
+body {
+background-color: #090c0a !important;
+background-image:
+radial-gradient(ellipse at 8% 12%, #b7ff320b, transparent 30%),
+radial-gradient(ellipse at 92% 42%, #b7ff3208, transparent 32%),
+radial-gradient(ellipse at 45% 95%, #b7ff3209, transparent 35%) !important;
+background-attachment: fixed;
+}
+
+main {
+position: relative;
+z-index: 1;
+}
+
+header {
+box-shadow: 0 8px 30px #0005, 0 1px 0 #b7ff3210;
+}
+
+::selection {
+background: #b7ff32;
+color: #10140a;
+}
+
+:focus-visible {
+outline: 2px solid #b7ff32;
+outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+body {
+background-attachment: scroll;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+}
+/* FEATURED SECTION - PREMIUM LIME EDITION */
+
+.featured-section {
+max-width: 1450px;
+margin: 55px auto !important;
+padding: 35px 20px !important;
+}
+
+.featured-heading {
+margin-bottom: 28px;
+}
+
+.featured-tag {
+display: inline-block;
+color: #b7ff32;
+font-size: 11px;
+font-weight: 900;
+letter-spacing: 2.5px;
+margin-bottom: 12px;
+}
+
+.featured-heading h2 {
+color: #f4f7ef;
+font-size: clamp(30px, 4vw, 46px);
+font-weight: 900;
+margin: 0 0 12px;
+}
+
+.featured-heading h2 span {
+color: #b7ff32;
+text-shadow: 0 0 22px #b7ff3225;
+}
+
+.featured-heading p {
+color: #aab3a5;
+line-height: 1.8;
+}
+
+.featured-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 20px;
+width: 100%;
+}
+
+.featured-card {
+min-width: 0;
+}
+
+@media (max-width: 760px) {
+.featured-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 10px;
+}
+
+.featured-card {
+padding: 14px 10px;
+overflow-wrap: anywhere;
+}
+
+.featured-card h3 {
+font-size: 16px;
+}
+
+.featured-card p {
+font-size: 12px;
+}
+
+.featured-number,
+.featured-action {
+font-size: 9px;
+letter-spacing: 0;
+}
+}
+
+
+.featured-card {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+min-height: 245px;
+padding: 25px;
+border: 1px solid #303a2b;
+border-radius: 19px;
+text-decoration: none !important;
+background:
+radial-gradient(ellipse at top right, #b7ff3210, transparent 55%),
+linear-gradient(145deg, #191e19, #0d100e);
+box-shadow: 0 8px 25px #0004;
+transition: transform .25s ease, border-color .25s ease,
+box-shadow .25s ease;
+}
+
+.featured-card:hover {
+transform: translateY(-6px);
+border-color: #b7ff32;
+box-shadow: 0 15px 32px #0006, 0 0 22px #b7ff3218;
+}
+
+.featured-icon {
+font-size: 32px;
+margin-bottom: 20px;
+}
+
+.featured-number {
+color: #a6c87b;
+font-size: 10px;
+font-weight: 800;
+letter-spacing: 1.5px;
+}
+
+.featured-card h3 {
+color: #f4f7ef;
+font-size: 22px;
+font-weight: 900;
+margin: 10px 0;
+}
+
+.featured-card p {
+color: #aab3a5;
+font-size: 13px;
+line-height: 1.7;
+}
+
+.featured-action {
+margin-top: auto;
+padding-top: 20px;
+color: #b7ff32;
+font-size: 11px;
+font-weight: 900;
+letter-spacing: 1px;
+}
+
+@media (max-width: 760px) {
+.featured-grid {
+grid-template-columns: 1fr;
+}
+
+.featured-section {
+margin: 30px auto !important;
+padding: 20px 14px !important;
+}
+
+.featured-card {
+min-height: 210px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.featured-card {
+transition: none;
+}
+}
+/* FORCE THREE FEATURED CARDS IN ONE ROW */
+
+#featured .featured-grid {
+display: grid !important;
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 14px !important;
+width: 100% !important;
+align-items: stretch !important;
+}
+
+#featured .featured-card {
+width: 100% !important;
+min-width: 0 !important;
+margin: 0 !important;
+box-sizing: border-box !important;
+}
+
+@media (max-width: 760px) {
+#featured .featured-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 8px !important;
+}
+
+#featured .featured-card {
+padding: 12px 8px !important;
+}
+
+#featured .featured-card h3 {
+font-size: 14px !important;
+overflow-wrap: anywhere;
+}
+
+#featured .featured-card p {
+font-size: 11px !important;
+}
+}
+#featured .featured-grid {
+display: grid !important;
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+gap: 12px !important;
+width: 100% !important;
+}
+
+#featured .featured-card {
+min-width: 0 !important;
+width: 100% !important;
+margin: 0 !important;
+box-sizing: border-box !important;
+}
+
+#featured .featured-card h3 {
+overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+#featured .featured-grid {
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+#featured .featured-card {
+padding: 12px 8px !important;
+}
+}
+/* FEATURED GAME COVER IMAGES */
+
+#featured .featured-card {
+padding: 14px !important;
+gap: 10px;
+}
+
+#featured .featured-image {
+display: block;
+width: 100%;
+height: auto;
+aspect-ratio: 460 / 215;
+object-fit: cover;
+border: 1px solid #39452c;
+border-radius: 12px;
+background: #111512;
+transition: border-color .25s ease, filter .25s ease;
+}
+
+#featured .featured-card:hover .featured-image {
+border-color: #b7ff32;
+filter: brightness(1.08);
+}
+
+#featured .featured-card h3 {
+margin: 5px 0 !important;
+font-size: clamp(13px, 1.4vw, 20px);
+}
+
+#featured .featured-card p {
+margin: 0 0 8px;
+}
+
+#featured .featured-action {
+line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+#featured .featured-card {
+padding: 8px !important;
+}
+
+#featured .featured-image {
+border-radius: 8px;
+}
+}
+
+/* PREMIUM FEATURED CARD HOVER EFFECT */
+
+#featured .featured-card {
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#featured .featured-card:hover {
+  transform: translateY(-7px);
+  border-color: #b7ff32;
+  box-shadow:
+    0 0 12px rgba(183, 255, 50, 0.25),
+    0 0 28px rgba(183, 255, 50, 0.12);
+}
+
+#featured .featured-image {
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+#featured .featured-card:hover .featured-image {
+  transform: scale(1.04);
+  filter: brightness(1.12);
+}
+
+/* LIVE STATS - GRAPHITE + LIME NEON */
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 25px 12px;
+  background: linear-gradient(145deg, #171a16, #0c0e0c);
+  border: 1px solid #30392a;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  border-color: #b7ff32;
+  box-shadow: 0 0 20px rgba(183, 255, 50, 0.13);
+}
+
+.stat-icon {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.stat-box h3 {
+  color: #b7ff32;
+  font-size: clamp(22px, 3vw, 34px);
+  margin: 5px 0 10px;
+}
+
+.stat-box p {
+  color: #b9c0b2;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* PREMIUM LOADING SCREEN */
+
+#premium-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #090b08;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#premium-loader.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  width: min(360px, 85%);
+  text-align: center;
+}
+
+.loader-logo {
+  font-size: 58px;
+  font-weight: 900;
+  color: #b7ff32;
+  letter-spacing: -3px;
+  text-shadow: 0 0 25px rgba(183, 255, 50, 0.4);
+  animation: logoPulse 1.2s ease-in-out infinite alternate;
+}
+
+.loader-logo span {
+  color: #f1f5eb;
+}
+
+.loader-content h2 {
+  color: #f1f5eb;
+  font-size: 19px;
+  letter-spacing: 2px;
+  margin: 12px 0;
+}
+
+.loader-content p,
+.loader-status {
+  color: #aab39e;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.loader-track {
+  height: 4px;
+  background: #252b20;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 24px 0 12px;
+}
+
+.loader-progress {
+  height: 100%;
+  width: 40%;
+  background: #b7ff32;
+  border-radius: inherit;
+  box-shadow: 0 0 12px #b7ff32;
+  animation: loaderMove 1.3s ease-in-out infinite;
+}
+
+@keyframes loaderMove {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(260%); }
+}
+
+@keyframes logoPulse {
+  from { opacity: 0.75; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1.03); }
+}
+
+/* PREMIUM DOWNLOAD BUTTONS */
+
+.card button,
+.game-card button {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.card button:hover,
+.game-card button:hover {
+  transform: translateY(-2px);
+}
+
+/* DIRECT DOWNLOAD BUTTON */
+.card button:first-of-type,
+.game-card button:first-of-type {
+  border: 1px solid #b7ff32;
+  background: #b7ff32;
+  color: #10130c;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(183, 255, 50, 0.12);
+}
+
+.card button:first-of-type:hover,
+.game-card button:first-of-type:hover {
+  background: #d0ff78;
+  box-shadow: 0 0 20px rgba(183, 255, 50, 0.35);
+}
+
+/* VIEW DETAILS BUTTON */
+.card button:last-of-type,
+.game-card button:last-of-type {
+  border: 1px solid #424a3b;
+  background: #171a16;
+  color: #e9f2df;
+}
+
+.card button:last-of-type:hover,
+.game-card button:last-of-type:hover {
+  border-color: #b7ff32;
+  color: #b7ff32;
+  box-shadow: 0 0 14px rgba(183, 255, 50, 0.12);
+}
+
+/* PREMIUM ANNOUNCEMENT BAR */
+
+.premium-announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 13px 18px;
+  margin: 0;
+  background: linear-gradient(90deg, #10130c, #1b2114, #10130c);
+  border-top: 1px solid #303a25;
+  border-bottom: 1px solid #b7ff32;
+  color: #e9f2df;
+  font-size: 12px;
+  text-align: center;
+}
+
+.announcement-icon {
+  color: #b7ff32;
+  font-size: 17px;
+}
+
+.announcement-brand {
+  color: #b7ff32;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.announcement-divider {
+  color: #59644c;
+}
+
+.announcement-message {
+  color: #c5cebb;
+}
+
+@media (max-width: 600px) {
+  .premium-announcement {
+    gap: 7px;
+    padding: 12px 10px;
+    font-size: 10px;
+  }
+
+  .announcement-divider {
+    display: none;
+  }
+
+  .announcement-message {
+    width: 100%;
+  }
+}
+
+/* PREMIUM CATEGORY SECTIONS */
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+section[id] > h2,
+section[id] > h3 {
+  color: #edf4e5;
+  letter-spacing: 0.5px;
+}
+
+section[id] > h2 span,
+section[id] > h3 span {
+  color: #b7ff32;
+}
+
+section[id] > h2::after {
+  content: "";
+  display: block;
+  width: 58px;
+  height: 3px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background: #b7ff32;
+  box-shadow: 0 0 12px rgba(183, 255, 50, 0.35);
+}
+
+/* Category section spacing */
+#pc-games,
+#android-games,
+#pc-apps,
+#android-apps,
+#movies,
+#web-series {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+/* Smooth section transitions */
+#pc-games,
+#android-games,
+#pc-apps,
+#android-apps,
+#movies,
+#web-series {
+  transition: border-color 0.25s ease;
+}
+
+/* PREMIUM SEARCH BAR */
+
+#search,
+#searchInput,
+input[type="search"] {
+  background: #12150f;
+  color: #f0f5e9;
+  border: 1px solid #39432e;
+  border-radius: 12px;
+  padding: 14px 17px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search:focus,
+#searchInput:focus,
+input[type="search"]:focus {
+  border-color: #b7ff32;
+  box-shadow: 0 0 0 3px rgba(183, 255, 50, 0.09),
+              0 0 18px rgba(183, 255, 50, 0.12);
+}
+
+#search::placeholder,
+#searchInput::placeholder,
+input[type="search"]::placeholder {
+  color: #89927e;
+}
+
+@media (max-width: 600px) {
+  #search,
+  #searchInput,
+  input[type="search"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.footer-socials {
+  text-align: center;
+  margin-top: 25px;
+  padding: 22px 10px;
+  border-top: 1px solid #383838;
+}
+
+.footer-socials h3 {
+  color: #c5ff3d;
+  margin-bottom: 16px;
+}
+
+.social-link {
+  display: inline-block;
+  margin: 6px;
+  padding: 11px 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.social-link:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.15);
+}
+
+.tiktok {
+  background: #171717;
+  border: 1px solid #c5ff3d;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.facebook {
+  background: #1877f2;
+}
+
+/* RAUF PREMIUM HUB - Game Card Hover Upgrade */
+
+.game-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+              border-color 0.3s ease;
+  border: 1px solid #292929;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  border-color: #c5ff3d;
+  box-shadow: 0 8px 25px rgba(197, 255, 61, 0.18);
+}
+
+.game-card img {
+  transition: transform 0.4s ease;
+}
+
+.game-card:hover img {
+  transform: scale(1.06);
+}
+
+/* TRENDING GAMES SECTION */
+.trending-section {
+  max-width: 1250px;
+  margin: 30px auto 42px;
+  padding: 0 24px;
+}
+.trending-topline {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:18px;
+}
+.trending-kicker {
+  color:#b7ff32;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+.trending-section h2 {
+  margin:0;
+  color:#f7f8f4;
+  font-size:clamp(22px,3vw,32px);
+}
+.trending-section h2 span { color:#b7ff32; }
+.trending-section .trending-subtitle {
+  color:#aeb5a7;
+  font-size:13px;
+  margin:7px 0 0;
+}
+.trending-section .trending-grid { margin-top:0; }
+.trending-view-all {
+  flex-shrink:0;
+  padding:10px 14px;
+  color:#b7ff32;
+  background:#151b11;
+  border:1px solid #607d25;
+  border-radius:9px;
+  font-weight:800;
+  cursor:pointer;
+}
+.trending-view-all:hover { background:#b7ff32; color:#111; }
+@media(max-width:600px) {
+  .trending-section { padding:0 12px; margin:24px auto 32px; }
+  .trending-topline { align-items:start; }
+  .trending-view-all { padding:8px 10px; font-size:11px; }
+}
+
+
+/* PREMIUM CARD RATINGS + HOT/NEW BADGES */
+.poster { isolation: isolate; }
+.card-badge {
+  position: absolute; top: 12px; left: 12px; z-index: 3;
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 7px 10px; border-radius: 7px;
+  font-size: 10px; line-height: 1; font-weight: 900; letter-spacing: .8px;
+  box-shadow: 0 3px 12px #0008;
+}
+.hot-badge { color: #201006; background: linear-gradient(120deg,#ff9c32,#ffdf65); }
+.new-badge { color: #10140a; background: linear-gradient(120deg,#b7ff32,#e0ff9c); }
+.card-rating { display:flex; align-items:center; gap:7px; margin: 0 0 10px; font-size:12px; }
+.rating-stars { color:#b7ff32; letter-spacing:1px; font-size:13px; text-shadow:0 0 9px #b7ff3235; }
+.card-rating strong { color:#f4f7ef; font-size:12px; }
+.rating-scale { color:#89927e; font-size:11px; }
+@media(max-width:480px) { .card-badge { top:7px; left:7px; padding:6px 7px; font-size:9px; } .card-rating { gap:5px; } .rating-stars { font-size:11px; letter-spacing:0; } }
+
+</style>
+
+</head>
+
+<body>
+    
+<!-- RAUF PREMIUM HUB LOADING SCREEN -->
+<div id="premium-loader">
+  <div class="loader-content">
+    <div class="loader-logo">R<span>PH</span></div>
+    <h2>RAUF PREMIUM HUB</h2>
+    <p>PREPARING YOUR GAME ZONE</p>
+    <div class="loader-track">
+      <div class="loader-progress"></div>
+    </div>
+    <span class="loader-status">LOADING...</span>
+  </div>
+</div>
+    <div id="pageProgress"></div>
+<header>
+  <div class="nav">
+    <a class="logo" href="#" id="homeLogo">RAUF <span>PREMIUM HUB</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#" id="homeLink">Home</a>
+      <a href="#pc-games">PC Games</a>
+      <a href="#android-games">Android Games</a>
+      <a href="#pc-apps">PC Apps</a>
+      <a href="#android-apps">Android Apps</a>
+      <a href="#movies">Movies</a>
+      <a href="#web-series">Web Series</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PREMIUM ANNOUNCEMENT BAR -->
+<div class="premium-announcement">
+  <span class="announcement-icon">⚡</span>
+  <span class="announcement-brand">RAUF PREMIUM HUB</span>
+  <span class="announcement-divider">|</span>
+  <span class="announcement-message">
+    Discover Games • Explore Apps • Find Your Next Adventure
+  </span>
+</div>
+
+<section class="hero" id="hero">
+  <div class="eyebrow">YOUR DIGITAL ENTERTAINMENT DESTINATION</div>
+  <h1>Explore Your Next <span>Digital World</span></h1>
+  <p>PC games, Android games, premium apps, movies and more — all in one place.</p>
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input id="searchInput" type="search"
+      placeholder="Search games, apps, movies..."
+      aria-label="Search all items">
+  </div>
+  <p class="hero-note">Search by name or explore your favourite category.</p>
+
+
+<!-- FEATURED GAMES SECTION -->
+
+<div class="featured-heading">
+  <span class="featured-tag">✦ HANDPICKED FOR YOU</span>
+  <h2>Featured <span>Games</span></h2>
+  <p>Explore our top picks and discover your next favourite game.</p>
+</div>
+
+
+
+<div class="featured-grid">
+
+  <a class="featured-card" href="#pc-games">
+    <img
+      class="featured-image"
+      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg"
+      alt="Grand Theft Auto V cover"
+      loading="lazy"
+    />
+    <span class="featured-number">01 / TOP PICK</span>
+    <h3>Grand Theft Auto V</h3>
+    <p>Explore Los Santos in this iconic open-world action game.</p>
+    <span class="featured-action">EXPLORE PC GAMES ↗</span>
+  </a>
+
+  <a class="featured-card" href="#pc-games">
+    <img
+      class="featured-image"
+      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg"
+      alt="Forza Horizon 5 cover"
+      loading="lazy"
+    />
+    <span class="featured-number">02 / RACING PICK</span>
+    <h3>Forza Horizon 5</h3>
+    <p>Discover spectacular racing across the landscapes of Mexico.</p>
+    <span class="featured-action">EXPLORE PC GAMES ↗</span>
+  </a>
+
+  <a class="featured-card" href="#pc-games">
+    <img
+      class="featured-image"
+      src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg"
+      alt="Red Dead Redemption 2 cover"
+      loading="lazy"
+    />
+    <span class="featured-number">03 / ADVENTURE PICK</span>
+    <h3>Red Dead Redemption 2</h3>
+    <p>Experience an epic open-world Western adventure.</p>
+    <span class="featured-action">EXPLORE PC GAMES ↗</span>
+  </a>
+
+</div>
+
+
+</section>
+
+<!-- RAUF PREMIUM HUB LIVE STATS -->
+<section class="stats-section" id="live-stats">
+  <div class="stat-box">
+    <span class="stat-icon">🎮</span>
+    <h3>1000+</h3>
+    <p>GAMES TO EXPLORE</p>
+  </div>
+
+  <div class="stat-box">
+    <span class="stat-icon">📂</span>
+    <h3>06</h3>
+    <p>CONTENT CATEGORIES</p>
+  </div>
+
+  <div class="stat-box">
+    <span class="stat-icon">⚡</span>
+    <h3>Direct</h3>
+    <p>DOWNLOAD OPTIONS</p>
+  </div>
+</section>
+<!-- END FEATURED GAMES -->
+
+
+<div class="quick-links" id="quickLinks">
+  <a href="#pc-games">🎮 PC Games</a>
+  <a href="#android-games">📱 Android Games</a>
+  <a href="#pc-apps">💻 PC Apps</a>
+  <a href="#android-apps">✨ Android Premium Apps</a>
+  <a href="#movies">🎬 Movies</a>
+  <a href="#web-series">📺 Web Series</a>
+</div>
+
+<main>
+  <div id="homeView"></div>
+  <section id="catalogView">
+    <div class="catalog-heading">
+      <div>
+        <div class="eyebrow">EXPLORE COLLECTION</div>
+        <h2 id="catalogTitle">Collection</h2>
+        <p class="section-sub" id="catalogCount"></p>
+      </div>
+      <button class="back-btn" id="backBtn">← Back to Home</button>
+    </div>
+    <div class="grid" id="catalogGrid"></div>
+  </section>
+  <div class="no-results" id="noResults">
+    <div style="font-size:35px">🔎</div>
+    <h3>No items found</h3>
+    <p>Try another name or keyword.</p>
+  </div>
+</main>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <div>
+      <a class="logo" href="#">RAUF <span>PREMIUM HUB</span></a>
+      <p>Your destination for games, apps and entertainment.<br>
+      Discover titles and visit authorized providers.</p>
+    </div>
+    <div>
+      <strong>Explore</strong>
+      <p class="footer-links">
+        <a href="#pc-games">PC Games</a>
+        <a href="#android-games">Android Games</a>
+        <a href="#pc-apps">PC Apps</a>
+        <a href="#android-apps">Android Apps</a>
+        <a href="#movies">Movies</a>
+        <a href="#web-series">Web Series</a>
+      </p>
+    </div>
+  </div>
+  <div class="copyright">
+    © <span id="year"></span> RAUF PREMIUM HUB. All rights reserved.
+    Game and app trademarks belong to their respective owners.
+  </div>
+  
+<div class="footer-socials">
+  <h3>Follow RAUF PREMIUM HUB</h3>
+
+  <a href="https://www.tiktok.com/@raufff7860?_r=1&_t=ZS-9APW2S4tXSp"
+     target="_blank" rel="noopener noreferrer" class="social-link tiktok">
+    ♪ TikTok
+  </a>
+
+  <a href="https://instagram.com/dh_rauf7861?mdxt=aXJqdnc3OHNkeTNj"
+     target="_blank" rel="noopener noreferrer" class="social-link instagram">
+    ◎ Instagram
+  </a>
+
+  <a href="https://www.facebook.com/share/1A1kTyWEcj/"
+     target="_blank" rel="noopener noreferrer" class="social-link facebook">
+    f Facebook
+  </a>
+</div>
+</footer>
+
+<script>
+const categories = [
+  {id:"pc-games", name:"PC Games", icon:"🎮", key:"PC Games",
+   desc:"Popular PC games and adventures."},
+  {id:"android-games", name:"Android Games", icon:"📱", key:"Android Games",
+   desc:"Games for your Android phone or tablet."},
+  {id:"pc-apps", name:"PC Apps", icon:"💻", key:"PC Apps",
+   desc:"Useful software and creative tools for PC."},
+  {id:"android-apps", name:"Android Premium Apps", icon:"✨", key:"Android Premium Apps",
+   desc:"Discover apps and their official providers."},
+  {id:"movies", name:"Movies", icon:"🎬", key:"Movies",
+   desc:"Discover films and authorized viewing options."},
+  {id:"web-series", name:"Web Series", icon:"📺", key:"Web Series",
+   desc:"Explore shows and official streaming services."}
+];
+
+const steamImage = id =>
+  "https://cdn.cloudflare.steamstatic.com/steam/apps/" + id + "/header.jpg";
+
+const items = [
+  // PC GAMES
+  {name:"Forza Horizon 5",cat:"PC Games",emoji:"🏎️",image:steamImage("1551360"),desc:"Open-world racing adventure.",url:"https://store.steampowered.com/app/1551360/Forza_Horizon_5/"},
+  {name:"Grand Theft Auto V",cat:"PC Games",emoji:"🚘",image:steamImage("3240220"),desc:"Open-world action and adventure.",url:"https://ts.buzzheavier.com/d/y3urdxf9h7qs?v=tsEhqJSpRq0DOsqz0F_gDzgZRvrVeGzEOXHMX3s2MBSOz3xIvwwVAzZWAQeHTw1h5zU0MvWxzdQ7c3srTaUn1yGB3xZWo3h7Q8bbffqxdvQm-bGTcDV_Fzn4nelBb81siyPtMZTJO-jigTXx4UodqHt1h8nBs1gWbMw9LwD3&s=c&t=1784272947731"},
+  {name:"Red Dead Redemption 2",cat:"PC Games",emoji:"🤠",image:steamImage("1174180"),desc:"Explore a vast western world.",url:"https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"},
+  {name:"God of War",cat:"PC Games",emoji:"⚔️",image:steamImage("1593500"),desc:"Mythological action adventure.",url:"https://store.steampowered.com/app/1593500/God_of_War/"},
+  {name:"Cyberpunk 2077",cat:"PC Games",emoji:"🌃",image:steamImage("1091500"),desc:"Futuristic open-world RPG.",url:"https://store.steampowered.com/app/1091500/Cyberpunk_2077/"},
+  {name:"Elden Ring",cat:"PC Games",emoji:"🗡️",image:steamImage("1245620"),desc:"Fantasy action role-playing game.",url:"https://store.steampowered.com/app/1245620/ELDEN_RING/"},
+  {name:"The Witcher 3",cat:"PC Games",emoji:"🐺",image:steamImage("292030"),desc:"Epic fantasy role-playing adventure.",url:"https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"},
+  {name:"Hogwarts Legacy",cat:"PC Games",emoji:"🪄",image:steamImage("990080"),desc:"Explore a magical open world.",url:"https://store.steampowered.com/app/990080/Hogwarts_Legacy/"},
+  {name:"Baldur's Gate 3",cat:"PC Games",emoji:"🐉",image:steamImage("1086940"),desc:"Fantasy role-playing adventure.",url:"https://store.steampowered.com/app/1086940/Baldurs_Gate_3/"},
+  {name:"Resident Evil 4",cat:"PC Games",emoji:"🧟",image:steamImage("2050650"),desc:"Survival horror action.",url:"https://store.steampowered.com/app/2050650/Resident_Evil_4/"},
+  {name:"Stardew Valley",cat:"PC Games",emoji:"🌱",image:steamImage("413150"),desc:"Build a farm and a new life.",url:"https://store.steampowered.com/app/413150/Stardew_Valley/"},
+  {name:"Terraria",cat:"PC Games",emoji:"⛏️",image:steamImage("105600"),desc:"Explore, craft and build.",url:"https://store.steampowered.com/app/105600/Terraria/"},
+
+  
+  // ANDROID GAMES
+  {name:"PUBG Mobile",cat:"Android Games",emoji:"🎯",desc:"Battle royale action on mobile.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/578080/header.jpg",url:"https://play.google.com/store/search?q=PUBG%20Mobile&c=apps"},
+  {name:"Free Fire",cat:"Android Games",emoji:"🔥",desc:"Fast-paced mobile battle royale.",image:"https://cdn.wildflamestudio.com/common/web_event/official2.ff.garena.all/img/20228/65fef1213324415a00e170bef3a51e2b.jpg",url:"https://play.google.com/store/search?q=Free%20Fire&c=apps"},
+  {name:"Call of Duty Mobile",cat:"Android Games",emoji:"🪖",desc:"Multiplayer and battle royale action.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1938090/header.jpg",url:"https://play.google.com/store/search?q=Call%20of%20Duty%20Mobile&c=apps"},
+  {name:"Minecraft",cat:"Android Games",emoji:"🧱",desc:"Build and explore blocky worlds.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1928870/header.jpg",url:"https://play.google.com/store/search?q=Minecraft&c=apps"},
+  {name:"Asphalt Legends",cat:"Android Games",emoji:"🏁",desc:"Arcade racing on mobile.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1815780/header.jpg",url:"https://play.google.com/store/search?q=Asphalt%20Legends&c=apps"},
+  {name:"eFootball",cat:"Android Games",emoji:"⚽",desc:"Football action on your phone.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1665460/header.jpg",url:"https://play.google.com/store/search?q=eFootball&c=apps"},
+  {name:"Roblox",cat:"Android Games",emoji:"🎮",desc:"Play experiences created by others.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg",url:"https://play.google.com/store/search?q=Roblox&c=apps"},
+  {name:"Clash of Clans",cat:"Android Games",emoji:"🏰",desc:"Build a village and battle.",image:"https://commons.wikimedia.org/wiki/Special:FilePath/Clash_of_Clans_Logo.png",url:"https://play.google.com/store/search?q=Clash%20of%20Clans&c=apps"},
+  {name:"Subway Surfers",cat:"Android Games",emoji:"🚆",desc:"Endless runner arcade game.",image:"https://commons.wikimedia.org/wiki/Special:FilePath/Subway_Surfers_logo.svg",url:"https://play.google.com/store/search?q=Subway%20Surfers&c=apps"},
+  {name:"Brawl Stars",cat:"Android Games",emoji:"💥",desc:"Quick multiplayer battles.",image:"https://commons.wikimedia.org/wiki/Special:FilePath/Brawl_Stars_2025_logo.png",url:"https://play.google.com/store/search?q=Brawl%20Stars&c=apps"},
+  {name:"Asphalt 9",cat:"Android Games",emoji:"🏎️",desc:"High-speed arcade racing.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/1815780/header.jpg",url:"https://play.google.com/store/search?q=Asphalt%209&c=apps"},
+  {name:"Among Us",cat:"Android Games",emoji:"🚀",desc:"Teamwork and social deduction.",image:"https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg",url:"https://play.google.com/store/search?q=Among%20Us&c=apps"},
+
+  // PC APPS
+  {name:"Blender",cat:"PC Apps",emoji:"🎨",desc:"Free 3D creation and animation software.",url:"https://www.blender.org/download/"},
+  {name:"VLC Media Player",cat:"PC Apps",emoji:"▶️",desc:"Free media player for many formats.",url:"https://www.videolan.org/vlc/"},
+  {name:"GIMP",cat:"PC Apps",emoji:"🖼️",desc:"Free image editing software.",url:"https://www.gimp.org/downloads/"},
+  {name:"OBS Studio",cat:"PC Apps",emoji:"🎥",desc:"Record and livestream your screen.",url:"https://obsproject.com/download"},
+  {name:"7-Zip",cat:"PC Apps",emoji:"🗜️",desc:"Free file archiving utility.",url:"https://www.7-zip.org/"},
+  {name:"Audacity",cat:"PC Apps",emoji:"🎙️",desc:"Record and edit audio.",url:"https://www.audacityteam.org/download/"},
+  {name:"Visual Studio Code",cat:"PC Apps",emoji:"💻",desc:"Code editor for web and software projects.",url:"https://code.visualstudio.com/"},
+  {name:"LibreOffice",cat:"PC Apps",emoji:"📄",desc:"Free office productivity suite.",url:"https://www.libreoffice.org/download/download-libreoffice/"},
+  {name:"Inkscape",cat:"PC Apps",emoji:"✒️",desc:"Create vector graphics and illustrations.",url:"https://inkscape.org/release/"},
+  {name:"HandBrake",cat:"PC Apps",emoji:"🎞️",desc:"Convert video files with an open-source tool.",url:"https://handbrake.fr/downloads.php"},
+  {name:"Krita",cat:"PC Apps",emoji:"🖌️",desc:"Digital painting and illustration software.",url:"https://krita.org/en/download/"},
+  {name:"Thunderbird",cat:"PC Apps",emoji:"✉️",desc:"Email and calendar application.",url:"https://www.thunderbird.net/"},
+
+  // ANDROID PREMIUM APPS
+  {name:"Canva",cat:"Android Premium Apps",emoji:"🎨",desc:"Design graphics; optional paid plans.",url:"https://play.google.com/store/search?q=Canva&c=apps"},
+  {name:"CapCut",cat:"Android Premium Apps",emoji:"🎬",desc:"Video editing with plan-dependent features.",url:"https://play.google.com/store/search?q=CapCut&c=apps"},
+  {name:"Adobe Lightroom",cat:"Android Premium Apps",emoji:"📸",desc:"Photo editing with optional premium features.",url:"https://play.google.com/store/search?q=Adobe%20Lightroom&c=apps"},
+  {name:"Poweramp",cat:"Android Premium Apps",emoji:"🎵",desc:"Music player; check purchase options.",url:"https://play.google.com/store/search?q=Poweramp&c=apps"},
+  {name:"Nova Launcher",cat:"Android Premium Apps",emoji:"✨",desc:"Customize your Android home screen.",url:"https://play.google.com/store/search?q=Nova%20Launcher&c=apps"},
+  {name:"Tasker",cat:"Android Premium Apps",emoji:"⚙️",desc:"Automate tasks on Android.",url:"https://play.google.com/store/search?q=Tasker&c=apps"},
+  {name:"Solid Explorer",cat:"Android Premium Apps",emoji:"📂",desc:"File manager with advanced features.",url:"https://play.google.com/store/search?q=Solid%20Explorer&c=apps"},
+  {name:"Pocket Casts",cat:"Android Premium Apps",emoji:"🎧",desc:"Discover podcasts and listening features.",url:"https://play.google.com/store/search?q=Pocket%20Casts&c=apps"},
+  {name:"Bitwarden",cat:"Android Premium Apps",emoji:"🔐",desc:"Password manager with optional paid plan.",url:"https://play.google.com/store/search?q=Bitwarden&c=apps"},
+  {name:"Sleep as Android",cat:"Android Premium Apps",emoji:"🌙",desc:"Sleep tracking and alarm features.",url:"https://play.google.com/store/search?q=Sleep%20as%20Android&c=apps"},
+  {name:"Moon+ Reader",cat:"Android Premium Apps",emoji:"📚",desc:"E-book reader with paid edition options.",url:"https://play.google.com/store/search?q=Moon%20Reader&c=apps"},
+  {name:"Solid Explorer",cat:"Android Premium Apps",emoji:"🗃️",desc:"Explore files using the official listing.",url:"https://play.google.com/store/search?q=Solid%20Explorer&c=apps"},
+
+  // MOVIES — legally available open films and official services
+  {name:"Big Buck Bunny",cat:"Movies",emoji:"🐰",desc:"Open animated short film.",url:"https://peach.blender.org/"},
+  {name:"Sintel",cat:"Movies",emoji:"🐉",desc:"Open fantasy short film.",url:"https://durian.blender.org/"},
+  {name:"Tears of Steel",cat:"Movies",emoji:"🤖",desc:"Open science-fiction short film.",url:"https://mango.blender.org/"},
+  {name:"Elephants Dream",cat:"Movies",emoji:"🐘",desc:"Open movie from the Blender project.",url:"https://orange.blender.org/"},
+  {name:"Cosmos Laundromat",cat:"Movies",emoji:"🌌",desc:"Animated open movie project.",url:"https://cloud.blender.org/p/cosmos-laundromat/"},
+  {name:"Netflix Movies",cat:"Movies",emoji:"🍿",desc:"Browse films on the official service.",url:"https://www.netflix.com/"},
+  {name:"Prime Video Movies",cat:"Movies",emoji:"🎞️",desc:"Browse movies on the official service.",url:"https://www.primevideo.com/"},
+  {name:"YouTube Movies",cat:"Movies",emoji:"▶️",desc:"Browse movies and rentals where available.",url:"https://www.youtube.com/movies/"},
+  {name:"Apple TV",cat:"Movies",emoji:"📽️",desc:"Browse films through the official service.",url:"https://tv.apple.com/"},
+  {name:"Plex Movies",cat:"Movies",emoji:"🎬",desc:"Explore available ad-supported films.",url:"https://watch.plex.tv/"},
+  {name:"Internet Archive Films",cat:"Movies",emoji:"📀",desc:"Explore films; check each item's rights.",url:"https://archive.org/details/movies"},
+  {name:"Public Domain Movies",cat:"Movies",emoji:"🎥",desc:"Explore films and verify reuse or viewing rights.",url:"https://publicdomainmovie.net/"},
+
+  // WEB SERIES
+  {name:"Netflix Series",cat:"Web Series",emoji:"📺",desc:"Explore series on the official platform.",url:"https://www.netflix.com/"},
+  {name:"Prime Video Series",cat:"Web Series",emoji:"🎭",desc:"Browse official series listings.",url:"https://www.primevideo.com/"},
+  {name:"Disney+",cat:"Web Series",emoji:"⭐",desc:"Browse shows where the service is available.",url:"https://www.disneyplus.com/"},
+  {name:"Apple TV Series",cat:"Web Series",emoji:"🎬",desc:"Explore original series on Apple TV.",url:"https://tv.apple.com/"},
+  {name:"YouTube Series",cat:"Web Series",emoji:"▶️",desc:"Find series from official channels.",url:"https://www.youtube.com/"},
+  {name:"Plex TV",cat:"Web Series",emoji:"📡",desc:"Explore available free entertainment.",url:"https://watch.plex.tv/"},
+  {name:"Crunchyroll",cat:"Web Series",emoji:"🌸",desc:"Browse anime series and official plans.",url:"https://www.crunchyroll.com/"},
+  {name:"Tubi",cat:"Web Series",emoji:"🍿",desc:"Browse free streaming where available.",url:"https://tubitv.com/"},
+  {name:"Pluto TV",cat:"Web Series",emoji:"📡",desc:"Browse free channels and on-demand shows.",url:"https://pluto.tv/"},
+  {name:"BBC iPlayer",cat:"Web Series",emoji:"🇬🇧",desc:"Official BBC streaming; regional limits apply.",url:"https://www.bbc.co.uk/iplayer"},
+  {name:"Internet Archive TV",cat:"Web Series",emoji:"📼",desc:"Explore archive material and its rights.",url:"https://archive.org/details/television"},
+  {name:"Rakuten TV",cat:"Web Series",emoji:"🎞️",desc:"Browse entertainment available in your region.",url:"https://www.rakuten.tv/"}
+];
+
+// Assign category-specific artwork to entries without a supplied image.
+// Images are decorative and each card still works if an image fails to load.
+const fallbackImages = {
+  "Android Games":"https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=700&q=80",
+  "PC Apps":"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=700&q=80",
+  "Android Premium Apps":"https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?auto=format&fit=crop&w=700&q=80",
+  "Movies":"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80",
+  "Web Series":"https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?auto=format&fit=crop&w=700&q=80"
+};
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, ch => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[ch]);
+}
+
+// Create a unique built-in poster for every title that has no working cover URL.
+// This avoids repeated category photos and keeps cards attractive even offline.
+function makeArtwork(item){
+  const palettes = {
+    "PC Games":["#152d2a","#b7ff32"],
+    "Android Games":["#102c3c","#39d7ff"],
+    "PC Apps":["#272044","#bba1ff"],
+    "Android Premium Apps":["#3a2030","#ff9fc7"],
+    "Movies":["#38220f","#ffc15c"],
+    "Web Series":["#182744","#80b6ff"]
+  };
+  const colors=palettes[item.cat] || ["#202020","#c5ff3d"];
+  const title=String(item.name || "Untitled").replace(/[&<>"']/g, " ").slice(0,42);
+  const words=title.split(/\s+/); let lines=[""], line=0;
+  words.forEach(word=>{ if((lines[line]+" "+word).trim().length>18 && lines[line]){lines[++line]="";} lines[line]=(lines[line]+" "+word).trim(); });
+  lines=lines.slice(0,3);
+  const titleSvg=lines.map((part,i)=>`<text x="34" y="${184+i*28}" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#ffffff">${part}</text>`).join("");
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 640 400"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="${colors[0]}"/><stop offset="1" stop-color="#090b0d"/></linearGradient><pattern id="p" width="34" height="34" patternUnits="userSpaceOnUse"><path d="M34 0H0V34" fill="none" stroke="${colors[1]}" stroke-opacity=".13"/></pattern></defs><rect width="640" height="400" fill="url(#g)"/><rect width="640" height="400" fill="url(#p)"/><circle cx="500" cy="95" r="110" fill="${colors[1]}" opacity=".13"/><circle cx="500" cy="95" r="72" fill="none" stroke="${colors[1]}" stroke-width="2" opacity=".6"/><text x="34" y="105" font-size="70">${item.emoji || "✨"}</text><text x="34" y="150" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="${colors[1]}">RAUF PREMIUM HUB</text>${titleSvg}<rect x="34" y="330" width="572" height="2" fill="${colors[1]}" opacity=".65"/><text x="34" y="358" font-family="Arial,sans-serif" font-size="13" fill="#d8dfd5">${String(item.cat || "COLLECTION").replace(/[&<>"']/g," ").toUpperCase()}</text></svg>`;
+  return "data:image/svg+xml;charset=UTF-8,"+encodeURIComponent(svg);
+}
+
+function cardHTML(item){
+  const safeName=escapeHTML(item.name);
+  const safeCat=escapeHTML(item.cat);
+  const safeDesc=escapeHTML(item.desc);
+  const safeURL=/^https:\/\/[^\s"'<>]+$/i.test(item.url) ? item.url : "#";
+
+  // Fetch a title-specific thumbnail rather than showing the same category picture.
+  // If a supplied cover fails, try a title-specific search thumbnail, then the local artwork.
+  const queryType = item.cat === "Movies" ? "movie poster" :
+                    item.cat === "Web Series" ? "TV series poster" :
+                    (item.cat === "PC Apps" || item.cat === "Android Premium Apps") ? "official app icon" :
+                    "official game cover";
+  const searchImage = "https://tse1.mm.bing.net/th?q=" + encodeURIComponent(item.name + " " + queryType) + "&w=700&h=400&c=7&rs=1&p=0";
+  const img = item.image || searchImage;
+  const safeFallback=escapeHTML(makeArtwork(item));
+  const safeSearch=escapeHTML(searchImage);
+  const mode=item.image ? "provided" : "search";
+  const hotNames = ["Grand Theft Auto V", "Forza Horizon 5", "Red Dead Redemption 2", "Minecraft", "PUBG Mobile", "Free Fire", "Call of Duty Mobile", "Clash of Clans", "Brawl Stars"];
+  const newNames = ["Hogwarts Legacy", "Baldur's Gate 3", "Asphalt Legends", "Canva", "CapCut", "Blender"];
+  const badge = hotNames.includes(item.name) ? '<span class="card-badge hot-badge">🔥 HOT</span>' :
+                newNames.includes(item.name) ? '<span class="card-badge new-badge">✦ NEW</span>' : '';
+  const rating = item.rating || ({"PC Games":4.8,"Android Games":4.6,"PC Apps":4.5,"Android Premium Apps":4.5,"Movies":4.4,"Web Series":4.4}[item.cat] || 4.5);
+  return `
+    <article class="card">
+      <div class="poster">
+        <img loading="lazy" src="${escapeHTML(img)}" data-mode="${mode}" data-search-fallback="${safeSearch}" data-fallback="${safeFallback}" alt="${safeName} cover" onerror="if(this.dataset.mode==='provided'){this.dataset.mode='search';this.src=this.dataset.searchFallback;}else{this.onerror=null;this.src=this.dataset.fallback;}">
+        <span class="poster-emoji" aria-hidden="true">${escapeHTML(item.emoji || "✨")}</span>
+        ${badge}
+      </div>      <div class="card-body">
+        <span class="tag">${safeCat}</span>
+        <h3>${safeName}</h3>
+        <div class="card-rating" aria-label="Featured rating ${rating} out of 5"><span class="rating-stars" aria-hidden="true">★★★★★</span><strong>${Number(rating).toFixed(1)}</strong><span class="rating-scale">/ 5</span></div>
+        <p>${safeDesc}</p>
+       
+<div class="card-actions">
+  <a class="card-link" href="${escapeHTML(safeURL)}"
+     target="_blank" rel="noopener noreferrer">
+    ⬇ Direct Download
+  </a>
+ 
+<button class="details-btn" type="button"
+  data-details="${escapeHTML(item.name)}">
+  <span>▣</span> &nbsp; View Game Details &nbsp; →
+</button>
+</div>
+      </div>
+    </article>`;
+}
+
+const homeView=document.getElementById("homeView");
+const catalogView=document.getElementById("catalogView");
+const catalogGrid=document.getElementById("catalogGrid");
+const catalogTitle=document.getElementById("catalogTitle");
+const catalogCount=document.getElementById("catalogCount");
+const searchInput=document.getElementById("searchInput");
+const noResults=document.getElementById("noResults");
+let activeCategory=null;
+let searchQuery="";
+
+
+function getFilteredItems(cat, query) {
+  const normalizedQuery = query.toLowerCase()
+    .replace(/\bgta\b/g, "grand theft auto");
+
+  return items.filter(item =>
+    (!cat || item.cat === cat) &&
+    (item.name + " " + item.desc + " " + item.cat)
+      .toLowerCase()
+      .includes(normalizedQuery)
+  );
+}
+
+
+
+document.addEventListener("click", function(event) {
+  const button = event.target.closest("[data-details]");
+  if (!button) return;
+
+  const item = items.find(
+    entry => entry.name === button.dataset.details
+  );
+  if (!item) return;
+
+  const oldDetails = document.getElementById("game-details");
+  if (oldDetails) oldDetails.remove();
+
+  const details = document.createElement("div");
+  details.id = "game-details";
+  details.style.cssText = `
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.92);
+    color: white;
+    overflow-y: auto;
+    padding: 30px 16px;
+    text-align: center;
+  `;
+
+
+details.innerHTML = `
+  <div style="
+    max-width:700px;
+    margin:25px auto;
+    padding:24px;
+    background:linear-gradient(145deg,#160d24,#08080d);
+    border:1px solid #a855f7;
+    border-radius:18px;
+    box-shadow:0 0 28px rgba(168,85,247,.35);
+    text-align:left;
+  ">
+    <button id="close-game-details" style="
+      float:right;
+      background:#28163b;
+      color:white;
+      border:1px solid #a855f7;
+      padding:9px 14px;
+      border-radius:8px;
+      cursor:pointer;
+    ">✕ Close</button>
+
+    <div style="clear:both"></div>
+
+    ${
+      item.image
+        ? `<img src="${escapeHTML(item.image)}"
+             alt="${escapeHTML(item.name)}"
+             style="width:100%;max-height:320px;object-fit:cover;
+             border-radius:12px;margin-top:16px;">`
+        : `<div style="font-size:70px;text-align:center;padding:25px;">
+             ${escapeHTML(item.emoji || "🎮")}
+           </div>`
+    }
+
+    <h2 style="color:#c084fc;font-size:28px;margin-bottom:10px;">
+      ${escapeHTML(item.name)}
+    </h2>
+
+    <p style="color:#d8b4fe;">
+      📁 Category: ${escapeHTML(item.cat)}
+    </p>
+
+    <p style="color:#e5e1ec;line-height:1.8;">
+      ${escapeHTML(item.desc || "Details coming soon.")}
+    </p>
+
+    <a href="${escapeHTML(
+      /^https:\/\/[^\s"'<>]+$/i.test(item.url) ? item.url : "#"
+    )}" target="_blank" rel="noopener noreferrer"
+       style="display:block;text-align:center;
+       background:linear-gradient(90deg,#7e22ce,#a855f7);
+       color:white;padding:14px;border-radius:9px;
+       text-decoration:none;font-weight:bold;margin-top:22px;">
+      ⬇ Direct Download
+    </a>
+  </div>
+`;
+
+  document.body.appendChild(details);
+
+  document.getElementById("close-game-details").onclick = function() {
+    details.remove();
+  };
+});
+
+function renderHome(){
+  const trendingNames = [
+    "Grand Theft Auto V",
+    "Forza Horizon 5",
+    "Red Dead Redemption 2",
+    "Minecraft",
+    "PUBG Mobile",
+    "Free Fire"
+  ];
+  const trendingItems = trendingNames
+    .map(name => items.find(item => item.name === name))
+    .filter(item => item && (!searchQuery ||
+      (item.name + " " + item.desc + " " + item.cat).toLowerCase().includes(searchQuery.toLowerCase())
+    ));
+
+  const trendingHTML = trendingItems.length ? `
+    <section class="trending-section" id="trending-games">
+      <div class="trending-topline">
+        <div>
+          <div class="trending-kicker">🔥 Popular right now</div>
+          <h2>Trending <span>Games</span></h2>
+          <p class="trending-subtitle">Popular picks from the RAUF PREMIUM HUB collection.</p>
+        </div>
+        <button class="trending-view-all" data-view="PC Games">Explore Games →</button>
+      </div>
+      <div class="grid trending-grid">${trendingItems.map(cardHTML).join("")}</div>
+    </section>` : "";
+
+  homeView.innerHTML=trendingHTML + categories.map(cat=>{
+    const list=getFilteredItems(cat.key,searchQuery);
+    if(list.length===0) return "";
+    const shown=list.slice(0,4);
+    return `
+      <section class="section" id="${cat.id}">
+        <div class="section-head">
+          <div>
+            <h2><span>${cat.icon}</span>${cat.name}</h2>
+            <div class="section-sub">${escapeHTML(cat.desc)}</div>
+          </div>
+          <button class="view-all" data-view="${cat.key}">
+            View All (${list.length}) →
+          </button>
+        </div>
+        <div class="grid">${shown.map(cardHTML).join("")}</div>
+      </section>`;
+  }).join("");
+
+  homeView.querySelectorAll("[data-view]").forEach(button=>{
+    button.addEventListener("click",()=>{
+      openCatalog(button.dataset.view);
+    });
+  });
+  noResults.style.display=categories.every(c=>getFilteredItems(c.key,searchQuery).length===0)?"block":"none";
+}
+
+function openCatalog(cat){
+  activeCategory=cat;
+  searchQuery=searchInput.value.trim();
+  homeView.style.display="none";
+  catalogView.style.display="block";
+  document.getElementById("quickLinks").style.display="none";
+  document.getElementById("hero").style.display="none";
+
+  const list=getFilteredItems(cat,searchQuery);
+  const meta=categories.find(c=>c.key===cat);
+  catalogTitle.textContent=(meta?meta.icon+" ":"")+cat;
+  catalogCount.textContent=list.length+" results";
+  catalogGrid.innerHTML=list.map(cardHTML).join("");
+  noResults.style.display=list.length?"none":"block";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function backHome(){
+  activeCategory=null;
+  catalogView.style.display="none";
+  homeView.style.display="block";
+  document.getElementById("quickLinks").style.display="flex";
+  document.getElementById("hero").style.display="block";
+  renderHome();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.getElementById("backBtn").addEventListener("click",backHome);
+document.getElementById("homeLink").addEventListener("click",e=>{
+  e.preventDefault();backHome();
+});
+document.getElementById("homeLogo").addEventListener("click",e=>{
+  e.preventDefault();backHome();
+});
+document.getElementById("menuBtn").addEventListener("click",()=>{
+  document.getElementById("navlinks").classList.toggle("open");
+});
+document.querySelectorAll("#navlinks a").forEach(a=>{
+  a.addEventListener("click",()=>{
+    document.getElementById("navlinks").classList.remove("open");
+  });
+});
+
+
+searchInput.addEventListener("input", () => {
+  searchQuery = searchInput.value.trim();
+
+  const normalizedQuery = searchQuery.toLowerCase()
+    .replace(/\bgta\b/g, "grand theft auto");
+
+  searchQuery = normalizedQuery;
+
+  if (activeCategory) {
+    const list = getFilteredItems(activeCategory, searchQuery);
+    catalogCount.textContent = list.length + " results";
+    catalogGrid.innerHTML = list.map(cardHTML).join("");
+    noResults.style.display = list.length ? "none" : "block";
+  } else {
+    renderHome();
+
+    if (searchQuery) {
+      setTimeout(() => {
+        const firstResult = homeView.querySelector(".section .grid .game-card")
+          || homeView.querySelector(".section");
+
+        if (firstResult) {
+          firstResult.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+      }, 100);
+    }
+  }
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+renderHome();
+</script>
+<script>
+(() => {
+  const bar = document.getElementById("pageProgress");
+  if (!bar) return;
+
+  bar.style.width = "70%";
+
+  window.addEventListener("load", () => {
+    bar.style.width = "100%";
+
+    setTimeout(() => {
+      bar.classList.add("finished");
+    }, 300);
+  });
+})();
+</script>
+<button id="scrollTopBtn" aria-label="Back to top">↑</button>
+<script>
+(() => {
+  const btn = document.getElementById("scrollTopBtn");
+  if (!btn) return;
+
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("visible", window.scrollY > 300);
+  }, { passive: true });
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+</script>
+
+<script>
+window.addEventListener("load", function () {
+  const loader = document.getElementById("premium-loader");
+
+  if (loader) {
+    setTimeout(function () {
+      loader.classList.add("loader-hidden");
+
+      setTimeout(function () {
+        loader.remove();
+      }, 700);
+    }, 900);
+  }
+});
+</script>
+
+<button id="backToTop" title="Back to Top" aria-label="Back to Top">↑</button>
+
+<style>
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  background: #c5ff3d;
+  color: #111;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #c5ff3d66;
+  transition: 0.25s;
+}
+
+#backToTop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 22px #c5ff3d;
+}
+
+/* Live Game Search */
+.game-search-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 14px 18px;
+  background: #111;
+  border: 1px solid #c5ff3d;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(197, 255, 61, 0.10);
+}
+
+.game-search-box span {
+  font-size: 22px;
+}
+
+.game-search-box input {
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.game-search-box input::placeholder {
+  color: #999;
+}
+
+.game-search-box:focus-within {
+  box-shadow: 0 0 22px rgba(197, 255, 61, 0.25);
+}
+
+@media (max-width: 600px) {
+  .game-search-box {
+    margin: 18px 12px;
+  }
+}
+</style>
+
+<script>
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+  backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+backToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+<div id="welcomePopup" class="welcome-overlay">
+  <div class="welcome-box">
+    <div class="welcome-icon">🎮</div>
+    <h2>WELCOME TO</h2>
+    <h1>RAUF PREMIUM HUB</h1>
+    <p>Your Ultimate Gaming Destination</p>
+    <button id="exploreGames">EXPLORE GAMES →</button>
+    <button id="closeWelcome">Maybe Later</button>
+  </div>
+</div>
+
+<style>
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.welcome-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 35px 22px;
+  text-align: center;
+  background: #111;
+  border: 1px solid #c5ff3d;
+  border-radius: 18px;
+  box-shadow: 0 0 35px #c5ff3d33;
+  animation: welcomePop 0.4s ease;
+}
+
+.welcome-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.welcome-box h2 {
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 4px;
+}
+
+.welcome-box h1 {
+  color: #c5ff3d;
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.welcome-box p {
+  color: #bbb;
+  margin-bottom: 25px;
+}
+
+.welcome-box button {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#exploreGames {
+  background: #c5ff3d;
+  color: #111;
+}
+
+#closeWelcome {
+  background: #252525;
+  color: white;
+}
+
+@keyframes welcomePop {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+const welcomePopup = document.getElementById("welcomePopup");
+
+document.getElementById("closeWelcome").addEventListener("click", function () {
+  welcomePopup.style.display = "none";
+});
+
+document.getElementById("exploreGames").addEventListener("click", function () {
+  welcomePopup.style.display = "none";
+  const gamesSection = document.getElementById("pc-games");
+  if (gamesSection) {
+    gamesSection.scrollIntoView({ behavior: "smooth" });
+  }
+});
+</script>
+
+<div id="mouseGlow"></div>
+
+<style>
+#mouseGlow {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(
+    circle,
+    rgba(197, 255, 61, 0.13) 0%,
+    rgba(197, 255, 61, 0.05) 40%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  left: -300px;
+  top: -300px;
+}
+</style>
+
+<script>
+const mouseGlow = document.getElementById("mouseGlow");
+
+document.addEventListener("mousemove", function (event) {
+  mouseGlow.style.left = event.clientX + "px";
+  mouseGlow.style.top = event.clientY + "px";
+});
+</script>
+
+<div id="premiumToast">
+  <span class="toast-icon">🎮</span>
+  <div>
+    <strong>RAUF PREMIUM HUB</strong>
+    <p>Welcome back! Enjoy your gaming experience.</p>
+  </div>
+  <button id="closeToast" aria-label="Close notification">×</button>
+</div>
+
+<style>
+#premiumToast {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100vw - 50px);
+  padding: 16px;
+  background: #111;
+  color: white;
+  border: 1px solid #c5ff3d;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #c5ff3d33;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+  pointer-events: none;
+}
+
+#premiumToast.toast-show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#premiumToast .toast-icon {
+  font-size: 30px;
+}
+
+#premiumToast strong {
+  color: #c5ff3d;
+  font-size: 13px;
+}
+
+#premiumToast p {
+  margin: 5px 0 0;
+  font-size: 12px;
+  color: #ccc;
+}
+
+#closeToast {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+const premiumToast = document.getElementById("premiumToast");
+const closeToast = document.getElementById("closeToast");
+let toastTimer;
+
+function hidePremiumToast() {
+  premiumToast.classList.remove("toast-show");
+}
+
+closeToast.addEventListener("click", function () {
+  clearTimeout(toastTimer);
+  hidePremiumToast();
+});
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    premiumToast.classList.add("toast-show");
+
+    toastTimer = setTimeout(function () {
+      hidePremiumToast();
+    }, 5000);
+  }, 1000);
+});
+</script>
+
+<script>
+const gameSearchInput = document.getElementById("liveGameSearch");
+
+if (gameSearchInput) {
+  gameSearchInput.addEventListener("input", function () {
+    const searchText = this.value.toLowerCase().trim();
+
+    document.querySelectorAll(".game-card").forEach(function (card) {
+      const gameName = card.textContent.toLowerCase();
+      card.style.display = gameName.includes(searchText) ? "" : "none";
+    });
+  });
+}
+</script>
+</body>
+</html>
